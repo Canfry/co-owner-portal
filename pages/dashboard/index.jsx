@@ -1,7 +1,14 @@
 import Layout from '@/components/Layout';
+import { useSession } from 'next-auth/react';
 
 export default function Dashboard() {
-  return <div>Dashboard</div>;
+  const { data: session } = useSession();
+
+  if (session) {
+    return <div>Dashboard</div>;
+  } else {
+    return null;
+  }
 }
 
 Dashboard.getLayout = function getLayout(page) {
