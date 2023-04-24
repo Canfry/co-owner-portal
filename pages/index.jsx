@@ -1,6 +1,4 @@
 import { Lato } from 'next/font/google';
-import NestedLayout from '@/components/NestedLayout';
-import Link from 'next/link';
 
 import { CgMenuMotion } from 'react-icons/cg';
 
@@ -34,23 +32,11 @@ export default function Home() {
           faster, organize better.
         </p>
         <div className='flex items-center gap-4 mt-6'>
-          <Link href='/signin'>
-            <button className='border border-cyan-800 py-1 px-4 rounded-lg text-cyan-950 text-lg hover:bg-cyan-800 hover:text-white'>
-              Sign in
-            </button>
-          </Link>
-          <p>or</p>
-          <Link href='/register'>
-            <h2 className='text-lg text-cyan-900 hover:text-cyan-700'>
-              Register
-            </h2>
-          </Link>
+          <button className='border border-cyan-800 py-1 px-4 rounded-lg text-cyan-950 text-lg hover:bg-cyan-800 hover:text-white'>
+            Sign in
+          </button>
         </div>
       </div>
     </section>
   );
 }
-
-Home.getLayout = function getLayout(page) {
-  return <NestedLayout>{page}</NestedLayout>;
-};
